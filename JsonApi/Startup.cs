@@ -22,6 +22,7 @@ namespace JsonApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             services.AddDbContext<AppDbContext>(options =>
@@ -98,6 +99,7 @@ namespace JsonApi
 
             if (env.IsDevelopment())
             {
+                app.UseCors(builder => builder.WithOrigins("http://localhost:8080/"));
                 app.UseDeveloperExceptionPage();
             }
             else
