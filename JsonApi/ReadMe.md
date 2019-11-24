@@ -1,0 +1,1 @@
+﻿[Json:API dotnet core framework](https://json-api-dotnet.github.io/#/)
